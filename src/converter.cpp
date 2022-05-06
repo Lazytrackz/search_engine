@@ -29,17 +29,26 @@ std::vector<std::string>ConverterJSON::GetTextDocuments(){
             std::string text;
             std::ifstream files(i);
 
+            if(!files){
 
-            while (!files.eof()) {
-
-                std::string words;
-                files>>words;
-                text += words + " ";
+                std::cout<<"Link: "<<i<<" - incorrect link found"<<std::endl;
 
             }
 
-            documents.push_back(text);
-            files.close();
+            else {
+
+
+                while (!files.eof()) {
+
+                    std::string words;
+                    files >> words;
+                    text += words + " ";
+
+                }
+
+                documents.push_back(text);
+                files.close();
+            }
 
         }
 
