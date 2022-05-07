@@ -1,6 +1,6 @@
 # Search_engine
 
-![Дизайн без названия-2](https://user-images.githubusercontent.com/105053265/167264492-a75c6752-8877-4b16-8ec2-7474b3377528.png)
+![Дизайн без названия-2](https://user-images.githubusercontent.com/105053265/167264562-879664aa-9bc5-413c-8672-eb79852377f8.png)
 
 
 
