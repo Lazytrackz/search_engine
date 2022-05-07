@@ -120,7 +120,7 @@ The app's version is setup in CMakeList.txt:
 set(CURRENT_VERSION 1.0)
 ```
 
-The app will not launch if one of this points are true;
+The app will not launch if one of this points are true.
 You'll get message about this issues in console.
 
 You also get warnings if: link for doucument doesn't exist, document has more then 1000 words or word has more tnen 100 signts, same wrongs for requests.
