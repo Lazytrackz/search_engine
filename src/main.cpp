@@ -6,7 +6,9 @@
 #include "converter.h"
 #include "index.h"
 #include "searchServer.h"
+#include "config.h"
 #include "nlohmann/json.hpp"
+
 
 
 class NoConfigException : public std::exception{
@@ -28,6 +30,19 @@ public:
     const char*what()const noexcept override{
 
         return "config file is missing";
+    }
+
+};
+
+
+
+class IncorretVersionException : public std::exception{
+
+public:
+
+    const char*what()const noexcept override{
+
+        return "config.json has incorrect file version";
     }
 
 };
@@ -65,7 +80,15 @@ public:
             throw NoConfigException();
         }
 
+
+
+        if(launchDict["config"]["version"] != CURRENT_VERSION){
+
+            throw IncorretVersionException();
+        }
+
         config.close();
+
 
     }
 
@@ -88,9 +111,7 @@ public:
 
 int main(){
 
-
     Launch launch;
-
 
     try{
 
@@ -108,6 +129,14 @@ int main(){
     catch (const NoFileConfigException &y){
 
         std::cerr<<y.what()<<std::endl;
+        return 0;
+
+
+    }
+
+    catch (const IncorretVersionException &z){
+
+        std::cerr<<z.what()<<std::endl;
         return 0;
 
 
@@ -152,11 +181,7 @@ int main(){
 
     converter.putAnswers(answers);
 
-
-
-
-
-
+    std::cout<<"Search completed"<<std::endl;
 
 
 

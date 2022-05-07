@@ -24,33 +24,33 @@ std::vector<std::string>ConverterJSON::GetTextDocuments(){
         buffer.push_back(i);
     }
 
-        for (auto i : buffer) {
+    for (auto i : buffer) {
 
-            std::string text;
-            std::ifstream files(i);
+        std::string text;
+        std::ifstream files(i);
 
-            if(!files){
+        if(!files){
 
-                std::cout<<"Link: "<<i<<" - incorrect link found"<<std::endl;
-
-            }
-
-            else {
-
-
-                while (!files.eof()) {
-
-                    std::string words;
-                    files >> words;
-                    text += words + " ";
-
-                }
-
-                documents.push_back(text);
-                files.close();
-            }
+            std::cerr<<"Link: "<<i<<" - incorrect link found"<<std::endl;
 
         }
+
+        else {
+
+
+            while (!files.eof()) {
+
+                std::string words;
+                files >> words;
+                text += words + " ";
+
+            }
+
+            documents.push_back(text);
+            files.close();
+        }
+
+    }
 
 
     config.close();
