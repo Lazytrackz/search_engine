@@ -37,13 +37,10 @@ std::vector<std::string>ConverterJSON::GetTextDocuments(){
 
         else {
 
-
             while (!files.eof()) {
 
                 std::string words;
-                files >> words;
-                text += words + " ";
-
+                std::getline(files,text);
             }
 
             documents.push_back(text);
