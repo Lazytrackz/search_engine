@@ -1,8 +1,12 @@
 # Search_engine
 
+![Дизайн без названия-2](https://user-images.githubusercontent.com/105053265/167264492-a75c6752-8877-4b16-8ec2-7474b3377528.png)
+
+
+
 ## About the project
 
-This is console local-file search engine for servers and desctop platforms. 
+This is a console local-file search engine for servers and desctop platforms. 
 Provide fast search and easy to setup via JSON files.
 
 ## Description
@@ -49,10 +53,24 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 
 ## Setup&launch
 
+
 To build executable file you need to include third party JSON library https://github.com/nlohmann/json  
 This app uses CMake VERSION 3.19.
 The app doesn't work without JSON config file: config.json.
 You also need to put requests.json and answers.json to the project directory.
+
+To launch the app use command depends on your OS:
+
+```
+open Build_directory/search-engine
+```
+```
+Build_directory/search-engine
+```
+```
+C:\Build_directory\search-engine
+```
+
 
 How does it work:
 
