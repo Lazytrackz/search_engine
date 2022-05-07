@@ -56,9 +56,9 @@ You also need to put requests.json and answers.json to the project directory.
 
 How does it work:
 
-1.First of all you need to add links for documents to search into config.json, field "files"
-2.You may also setup how many responses you want to get in field: "max_responses" 
-3.Each document sould be no more then 1000 words, one word no more then 100 signts
+1. First of all you need to add links for documents to search into config.json, field "files"
+2. You may also setup how many responses you want to get in field: "max_responses" 
+3. Each document sould be no more then 1000 words, one word no more then 100 signts
 
 config.json examle:
 
