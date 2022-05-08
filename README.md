@@ -20,9 +20,9 @@ Search-engine is based on three classes:
 
 ```C++
 
-std::vector<std::string> GetTextDocuments();//convert documents to string
-std::vector<std::string> GetRequests();//convert requests to string
-void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//convert answers from string to JSON
+std::vector<std::string> GetTextDocuments();//converts documents to string
+std::vector<std::string> GetRequests();//converts requests to string
+void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//converts answers from string to JSON
 ```
 
 #### InvertedIndex 
