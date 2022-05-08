@@ -66,7 +66,7 @@ open Build_directory/search-engine
 Build_directory/search-engine
 ```
 ```
-C:\Build_directory\search-engine
+C:\Build_directory\search-engine.exe
 ```
 
 
