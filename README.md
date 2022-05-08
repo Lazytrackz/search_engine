@@ -70,7 +70,9 @@ C:\Build_directory\search-engine.exe
 ```
 
 
-How does it work:
+
+
+**How does it work:**
 
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
@@ -125,7 +127,9 @@ For example:
 For the firts request was found 3 documents. The most relevat - the document with ID2.
 For the second request no one document wasn't found;
 
-When you can get !CRASH!
+
+
+**When you can get !CRASH!**
 
 In main.cpp you can find some exceptions for different situations:
 
