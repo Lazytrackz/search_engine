@@ -129,7 +129,8 @@ For the second request no one document wasn't found;
 
 
 
-**When you can get !CRASH!**
+
+**When you get !CRASH!**
 
 In main.cpp you can find some exceptions for different situations:
 
