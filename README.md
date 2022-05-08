@@ -1,7 +1,5 @@
 # Search_engine
 
-![Дизайн без названия-2](https://user-images.githubusercontent.com/105053265/167264562-879664aa-9bc5-413c-8672-eb79852377f8.png)
-
 
 
 ## About the project
