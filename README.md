@@ -95,6 +95,8 @@ Wnen config file was setup, you need to add "requests" into requests.json.
 It could be simply words or sentences. 
 It should be no more then 1000 requests, one request  - no more 10 words.
 
+requests.json examle:
+
 ```JSON
 {
   "requests": [
