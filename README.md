@@ -2,7 +2,9 @@
 
 
 
-## About the project
+
+![png-clipart-cat-kitten-pixel-art-pixels-animals-text](https://user-images.githubusercontent.com/105053265/167440721-69f9c521-6e59-49b2-9008-65ef887dd619.png)
+
 
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
