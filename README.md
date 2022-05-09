@@ -77,6 +77,8 @@ C:\Build_directory\search-engine.exe
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
 3. Each document sould be no more then 1000 words, one word no more then 100 signts
+4. All words are separated by spaces and should have lower register letters
+5. You need use latin script only
 
 config.json examle:
 
@@ -94,8 +96,11 @@ config.json examle:
 ```
 
 Wnen config file was setup, you need to add "requests" into requests.json.
-It could be simply words or sentences. 
-It should be no more then 1000 requests, one request  - no more 10 words.
+
+1. It could be simply words or sentences
+2. It should be no more then 1000 requests, one request  - no more 10 words
+3. All words are separated by spaces and should have lower register letters
+5. You also need use latin script only
 
 requests.json examle:
 
@@ -175,8 +180,19 @@ set(CURRENT_VERSION 1.0)
 The app will not launch if one of this points are true.
 You'll get message about this issues in console.
 
-*You also get warnings if: link for doucument doesn't exist, document has more then 1000 words or word has more tnen 100 signts, same wrongs for requests.
-But the application will continue to work.*
+You also get warnings, but the application will continue to work:
+
+*- link: ... -incorrect link found - if the app can't find the link to a document*
+
+*- document: ... -has incorrect format - if the document or the word in the document has incorrect format*
+
+*- request: ... -has incorrect format - if the request or the word in the request has incorrect format*
+
+*- request: ... -is empty - if the request doesn't have any words*
+
+*- request: ... -over the limit -  if the request is out of limit (has number 1001 and more)* 
+
+**Please notice that if you see this warnigs, you'll get answers without incorrect documents and requests.**
 
 
 
