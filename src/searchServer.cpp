@@ -2,9 +2,8 @@
 #include <map>
 #include <unordered_set>
 #include <algorithm>
-#include <cmath>
 #include <sstream>
-#include "index.h"
+#include "invertedIndex.h"
 #include "searchServer.h"
 
 
@@ -21,7 +20,6 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
         std::map<int, int>wordFrequency;
         RelativeIndex relative;
 
-
         std::stringstream buffer;
         buffer<<i;
 
@@ -32,7 +30,6 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             uniqWord.emplace(word);
 
         }
-
 
         for (auto i : uniqWord) {
 
@@ -51,12 +48,10 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
             }
 
-
         }
 
 
         if (found) {
-
 
            for(auto it = wordsSort.begin(); it != wordsSort.end(); it++){
 
@@ -66,25 +61,22 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
                        it->second += i.count;
 
-                   } else {
+                   }
+                   else {
 
                        wordFrequency[i.doc_id] = i.count;
 
                    }
 
-
                }
 
-
            }
-
 
 
             auto maxRelevance = std::max_element(wordFrequency.begin(), wordFrequency.end(), []
                     (const auto &p1, const auto &p2) {
 
                 return p1.second < p2.second;
-
 
             });
 
@@ -93,10 +85,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
                 relative.doc_id = it->first;
                 relative.rank = (float) it->second / (float) maxRelevance->second;
-                relative.rank = floor(relative.rank * 1000) / 1000;
-
                 relativeVec.push_back(relative);
-
 
             }
 
@@ -104,9 +93,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
                 return r1.rank > r2.rank;
 
-
             });
-
 
         }
 
@@ -116,12 +103,9 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
 
         }
 
-
         search.push_back(relativeVec);
 
-
     }
-
 
     return search;
 

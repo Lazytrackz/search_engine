@@ -3,8 +3,8 @@
 #include <map>
 #include <exception>
 #include <fstream>
-#include "converter.h"
-#include "index.h"
+#include "converterJSON.h"
+#include "invertedIndex.h"
 #include "searchServer.h"
 #include "config.h"
 #include "nlohmann/json.hpp"
@@ -53,16 +53,13 @@ class Launch{
 
     nlohmann::json launchDict;
 
-
 public:
 
     Launch() = default;
 
-
     void check(){
 
         std::ifstream config("config.json");
-
 
         if(!config){
 
@@ -89,23 +86,17 @@ public:
 
         config.close();
 
-
     }
 
     void info(){
 
-
-                std::cout<<launchDict["config"]["name"]<<std::endl;
-                std::cout<<"version: "<<launchDict["config"]["version"]<<std::endl;
+        std::cout<<launchDict["config"]["name"]<<std::endl;
+        std::cout<<"version: "<<launchDict["config"]["version"]<<std::endl;
 
     }
 
 
 };
-
-
-
-
 
 
 
@@ -131,14 +122,12 @@ int main(){
         std::cerr<<y.what()<<std::endl;
         return 0;
 
-
     }
 
     catch (const IncorretVersionException &z){
 
         std::cerr<<z.what()<<std::endl;
         return 0;
-
 
     }
 
@@ -154,8 +143,6 @@ int main(){
     index.UpdateDocumentBase(converter.GetTextDocuments());
     SearchServer server(index);
 
-
-
     auto result = server.search(converter.GetRequests());
 
     for(auto i : result){
@@ -167,32 +154,17 @@ int main(){
             std::pair<int,float>p;
             p.first = j.doc_id;
             p.second = j.rank;
-
             relative.push_back(p);
-
 
         }
 
         answers.push_back(relative);
 
-
     }
-
 
     converter.putAnswers(answers);
 
     std::cout<<"Search completed"<<std::endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 }

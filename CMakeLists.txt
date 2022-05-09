@@ -12,7 +12,7 @@ set(JSON_BuildTests OFF CASH INTERNAL "")
 
 add_subdirectory(nlohmann_json)
 
-add_executable(search-engine src/converter.cpp include/converter.h include/index.h src/index.cpp
+add_executable(search-engine src/converterJSON.cpp include/converterJSON.h include/invertedIndex.h src/invertedIndex.cpp
         include/searchServer.h src/searchServer.cpp src/main.cpp)
 
 target_include_directories(search-engine PUBLIC include)

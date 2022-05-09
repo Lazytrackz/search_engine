@@ -2,18 +2,15 @@
 #include <map>
 #include <unordered_set>
 #include <sstream>
-#include "index.h"
+#include "invertedIndex.h"
 
 
 void InvertedIndex::UpdateDocumentBase(std::vector<std::string>input_docs){
 
 
-
-
     for(auto i : input_docs){
         docs.push_back(i);
     }
-
 
     int count = 0;
 
@@ -22,7 +19,6 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string>input_docs){
         std::map<std::string,int>countWord;
         Entry entry;
         entry.doc_id = count;
-
 
         std::stringstream buffer;
         buffer<<i;
@@ -43,7 +39,6 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string>input_docs){
                 countWord[word] = 1;
             }
 
-
         }
 
 
@@ -53,7 +48,6 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string>input_docs){
             freq_dictionary[it->first].push_back(entry);
 
         }
-
 
         count++;
 
