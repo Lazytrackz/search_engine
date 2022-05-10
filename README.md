@@ -56,7 +56,7 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 ## Setup&launch
 
 
-You need to include third party JSON library https://github.com/nlohmann/json  
+You need to install and include third party JSON library https://github.com/nlohmann/json  
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json to the project directory.
