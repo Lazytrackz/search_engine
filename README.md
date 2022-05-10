@@ -1,15 +1,17 @@
-# Search_engine
+# search_engine
+
+
+![search_engine](https://user-images.githubusercontent.com/105053265/167622043-1147d56a-1b0e-493f-a823-af010def199d.png)
 
 
 
 
-![png-clipart-cat-kitten-pixel-art-pixels-animals-text](https://user-images.githubusercontent.com/105053265/167440721-69f9c521-6e59-49b2-9008-65ef887dd619.png)
 
 
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
 
-## Description
+## description
 
 Search-engine is based on three classes:
 
@@ -51,7 +53,7 @@ SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to cou
 std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and return rlevant answers
 ```
 
-## Setup&launch
+## setup&launch
 
 
 You need to include third party JSON library https://github.com/nlohmann/json  
@@ -62,13 +64,13 @@ You also need to put config.json, requests.json and answers.json to the project 
 To launch the app after build use command depends on your OS:
 
 ```
-open Build_directory/search-engine
+open Build_directory/Search_engine
 ```
 ```
-Build_directory/search-engine
+Build_directory/Search_engine
 ```
 ```
-C:\Build_directory\search-engine.exe
+C:\Build_directory\Search_engine.exe
 ```
 
 
@@ -137,7 +139,7 @@ For the second request no one document wasn't found;
 
 
 
-**When you get !CRASH!**
+**when you get !CRASH!**
 
 In main.cpp you can find some exceptions for different situations:
 
