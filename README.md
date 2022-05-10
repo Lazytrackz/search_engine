@@ -64,13 +64,13 @@ You also need to put config.json, requests.json and answers.json to the project 
 To launch the app after building use command depends on your OS:
 
 ```
-open Build_directory/Search_engine
+cd Build_directory
+./Search_engine
 ```
+
 ```
-Build_directory/Search_engine
-```
-```
-C:\Build_directory\Search_engine.exe
+cd Build_directory
+>Search_engine.exe
 ```
 
 
@@ -89,8 +89,8 @@ config.json examle:
 ```JSON
 {
   "config": {
-    "name": "SearchEngine",
-    "version": "0.1",
+    "name": "Search_engine",
+    "version": "1.0",
     "max_responses": 5
   },
 
@@ -111,7 +111,7 @@ requests.json examle:
 ```JSON
 {
   "requests": [
-    "milk water"," sugar"
+    "milk water","sugar","milk", "coffee"
   ]
 
 }
@@ -126,15 +126,20 @@ For example:
 
 ```JSON
 {"answers":
-{"request001":
-{"relevance":
-[{"docid":2,"rank":1.0}, {"docid":0,"rank":0.699}, {"docid":1,"rank":0.3}], "result":"true"},
-  "request002":{"result":"false"}}
+{"request001":{"relevance":
+[{"docid":2,"rank":1.0},{"docid":0,"rank":0.699999988079071},{"docid":1,"rank":0.30000001192092896}],"result":"true"},
+"request002":{"docid":0,"rank":1.0,"result":"true"},
+"request003":{"relevance":
+[{"docid":2,"rank":1.0},{"docid":0,"rank":0.800000011920929},{"docid":1,"rank":0.20000000298023224}],"result":"true"},
+"request004":{"result":"false"}}
 }
+
 ```
 
 For the firts request was found 3 documents. The most relevat - the document with ID2.
-For the second request no one document wasn't found;
+For the second request was found only one document.
+For the third request was found 3 documents.
+The fourth request has an incorrect format, so it wasn't apply to search. 
 
 
 
@@ -186,17 +191,20 @@ You'll get message about this issues in console.
 
 You also get warnings, but the application will continue to work:
 
-*- link: ... -incorrect link found - if the app can't find the link to a document*
 
-*- document: ... -has incorrect format - if the document or the word in the document has incorrect format*
 
-*- request: ... -has incorrect format - if the request or the word in the request has incorrect format*
+*- link: ... -incorrect link found* - if the app can't find the link to a document
 
-*- request: ... -is empty - if the request doesn't have any words*
+*- document: ... -has incorrect format*- if the document or the word in the document has incorrect format
 
-*- request: ... -over the limit -  if the request is out of limit (has number 1001 and more)* 
+*- request: ... -has incorrect format* - if the request or the word in the request has incorrect format
+
+*- request: ... -is empty* - if the request doesn't have any words
+
+*- request: ... -over the limit* -  if the request is out of limit (has number 1001 and more)
 
 **Please notice that if you see this warnigs, you'll get answers without incorrect documents and requests.**
+
 
 
 
