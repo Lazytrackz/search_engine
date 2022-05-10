@@ -1,0 +1,9 @@
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+
+#define Search_engine_VERSION_MAJOR @Search_engine_VERSION_MAJOR@
+#define Search_engine_VERSION_MINOR @Search_engine_VERSION_MINOR@
+
+
+#endif // CONFIG_H_IN

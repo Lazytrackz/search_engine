@@ -3,10 +3,11 @@
 #include <map>
 #include <exception>
 #include <fstream>
+#include <string>
 #include "converterJSON.h"
 #include "invertedIndex.h"
 #include "searchServer.h"
-#include "config.h"
+#include "versionConfig.h"
 #include "nlohmann/json.hpp"
 
 
@@ -78,8 +79,9 @@ public:
         }
 
 
+        auto version = std::to_string(Search_engine_VERSION_MAJOR) + '.' + std::to_string(Search_engine_VERSION_MINOR);
 
-        if(launchDict["config"]["version"] != CURRENT_VERSION){
+        if(launchDict["config"]["version"] != version){
 
             throw IncorretVersionException();
         }
@@ -103,6 +105,7 @@ public:
 int main(){
 
     Launch launch;
+
 
     try{
 
@@ -166,5 +169,5 @@ int main(){
 
     std::cout<<"Search completed"<<std::endl;
 
-    
+
 }
