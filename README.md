@@ -172,11 +172,11 @@ public:
 
 1. If config.json doesn't have a field "config"
 2. If the app can't find file config.json
-3. If config.json has a version different from the app's version (see the field "version")
+3. If config.json has a version different from the app's version (see the field "project")
 
 The app's version is configured in CMakeList.txt:
 ```CMake
-set(CURRENT_VERSION 1.0)
+project(SearchEngine VERSION 1.0)
 ```
 
 The app will not launch if one of this points are true.
