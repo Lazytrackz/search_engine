@@ -64,13 +64,13 @@ You also need to put config.json, requests.json and answers.json to the project 
 To launch the app after building use command depends on your OS:
 
 ```
-open Build_directory/Search_engine
+cd Build_directory
+./Search_engine
 ```
+
 ```
-Build_directory/Search_engine
-```
-```
-C:\Build_directory\Search_engine.exe
+cd Build_directory
+>Search_engine.exe
 ```
 
 
