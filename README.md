@@ -186,17 +186,20 @@ You'll get message about this issues in console.
 
 You also get warnings, but the application will continue to work:
 
-*- link: ... -incorrect link found - if the app can't find the link to a document*
 
-*- document: ... -has incorrect format - if the document or the word in the document has incorrect format*
 
-*- request: ... -has incorrect format - if the request or the word in the request has incorrect format*
+*- link: ... -incorrect link found* - if the app can't find the link to a document
 
-*- request: ... -is empty - if the request doesn't have any words*
+*- document: ... -has incorrect format*- if the document or the word in the document has incorrect format
 
-*- request: ... -over the limit -  if the request is out of limit (has number 1001 and more)* 
+*- request: ... -has incorrect format* - if the request or the word in the request has incorrect format
+
+*- request: ... -is empty* - if the request doesn't have any words
+
+*- request: ... -over the limit* -  if the request is out of limit (has number 1001 and more)
 
 **Please notice that if you see this warnigs, you'll get answers without incorrect documents and requests.**
+
 
 
 
