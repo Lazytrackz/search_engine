@@ -1,4 +1,4 @@
-# search_engine
+# Search_engine
 
 
 ![search_engine](https://user-images.githubusercontent.com/105053265/167622043-1147d56a-1b0e-493f-a823-af010def199d.png)
@@ -11,7 +11,7 @@
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
 
-## description
+## Description
 
 Search-engine is based on three classes:
 
@@ -53,7 +53,7 @@ SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to cou
 std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and return rlevant answers
 ```
 
-## setup&launch
+## Setup&launch
 
 
 You need to include third party JSON library https://github.com/nlohmann/json  
@@ -139,7 +139,7 @@ For the second request no one document wasn't found;
 
 
 
-**when you get !CRASH!**
+**When you get !CRASH!**
 
 In main.cpp you can find some exceptions for different situations:
 
