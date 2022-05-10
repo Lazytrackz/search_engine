@@ -89,8 +89,8 @@ config.json examle:
 ```JSON
 {
   "config": {
-    "name": "SearchEngine",
-    "version": "0.1",
+    "name": "Search_engine",
+    "version": "1.0",
     "max_responses": 5
   },
 
@@ -111,7 +111,7 @@ requests.json examle:
 ```JSON
 {
   "requests": [
-    "milk water"," sugar"
+    "milk water","sugar","milk", "coffee"
   ]
 
 }
@@ -126,15 +126,20 @@ For example:
 
 ```JSON
 {"answers":
-{"request001":
-{"relevance":
-[{"docid":2,"rank":1.0}, {"docid":0,"rank":0.699}, {"docid":1,"rank":0.3}], "result":"true"},
-  "request002":{"result":"false"}}
+{"request001":{"relevance":
+[{"docid":2,"rank":1.0},{"docid":0,"rank":0.699999988079071},{"docid":1,"rank":0.30000001192092896}],"result":"true"},
+"request002":{"docid":0,"rank":1.0,"result":"true"},
+"request003":{"relevance":
+[{"docid":2,"rank":1.0},{"docid":0,"rank":0.800000011920929},{"docid":1,"rank":0.20000000298023224}],"result":"true"},
+"request004":{"result":"false"}}
 }
+
 ```
 
 For the firts request was found 3 documents. The most relevat - the document with ID2.
-For the second request no one document wasn't found;
+For the second request was found only one document.
+For the third request was found 3 documents.
+The fourth request has an incorrect format, so it wasn't apply to search. 
 
 
 
