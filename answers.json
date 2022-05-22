@@ -40,9 +40,7 @@
 			"result": true
 		},
 		"request004": {
-			"docid": 3,
-			"rank": 1.0,
-			"result": true
+			"result": false
 		}
 	}
 }
