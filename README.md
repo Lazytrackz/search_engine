@@ -84,7 +84,10 @@ cd Build_directory
 4. All words are separated by spaces and should have lower register letters
 5. You need use latin script only
 
-*You can use documents in directory "Test documents" for simply test.*
+
+*You can find unit tests in /src/test.cpp.
+To launch unit tests please use CMakeLists_tests.txt in Test documents folder, put it into the project folder.
+You can also use documents in directory "Test documents" for simply test after bulding the app.*
 
 config.json examle:
 
