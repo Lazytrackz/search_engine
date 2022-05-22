@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.19)
+project(Search_engine VERSION 1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+
+add_subdirectory(nlohmann_json)
+
+add_executable(Search_engine src/converterJSON.cpp include/converterJSON.h include/invertedIndex.h src/invertedIndex.cpp
+        include/searchServer.h src/searchServer.cpp src/test.cpp)
+
+target_include_directories(Search_engine PUBLIC include)
+
+
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+
+
+
+FetchContent_MakeAvailable(googletest)
+enable_testing()
+
+target_link_libraries(Search_engine PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(Search_engine PRIVATE gtest_main)
+include(GoogleTest)
+gtest_discover_tests(Search_engine)
+
+

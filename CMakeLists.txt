@@ -4,10 +4,10 @@ project(Search_engine VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 
 set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
-configure_file (${MY_INCLUDE_DIR}/versionConfig.h.in ${MY_INCLUDE_DIR}/versionConfig.h)
+configure_file(${MY_INCLUDE_DIR}/versionConfig.h.in ${MY_INCLUDE_DIR}/versionConfig.h)
 
 
-set(JSON_BuildTests OFF CASH INTERNAL "")
+set(JSON_BuildTests OFF CACHE INTERNAL "")
 
 add_subdirectory(nlohmann_json)
 
