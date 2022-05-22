@@ -56,7 +56,7 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 ## Setup&launch
 
 
-You need to install and include third party JSON library https://github.com/nlohmann/json  
+To build the app you need to use third party JSON library https://github.com/nlohmann/json ,this library is allready included to the project.
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json to the project directory.
@@ -83,6 +83,8 @@ cd Build_directory
 3. Each document sould be no more then 1000 words, one word no more then 100 signts
 4. All words are separated by spaces and should have lower register letters
 5. You need use latin script only
+
+*You can use documents in directory "Test documents" for simply test.*
 
 config.json examle:
 
@@ -136,10 +138,13 @@ For example:
 
 ```
 
-For the firts request was found 3 documents. The most relevat - the document with ID2.
-For the second request was found only one document.
-For the third request was found 3 documents.
-The fourth request has an incorrect format, so it wasn't apply to search. 
+-For the firts request was found 3 documents. The most relevat - the document with ID2
+
+-For the second request was found only one document
+
+-For the third request was found 3 documents
+
+-For the fourth request no one document wasn't found
 
 
 
