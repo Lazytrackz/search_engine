@@ -56,7 +56,7 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 ## Setup&launch
 
 
-To build the app you need to use third party JSON library https://github.com/nlohmann/json ,this library is allready included to the project.
+To build the app you need to use third party JSON library [https://github.com/nlohmann/json](https://github.com/nlohmann/json/releases) ,this library is allready included to the project as git-submodule.
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json to the project directory.
@@ -239,15 +239,17 @@ You also get warnings, but the application will continue to work:
 
 
 
-*- link: ... -incorrect link found* - if the app can't find the link to a document
+*- "document: ... has incorrect symbols"* - if the app can't open a document
 
-*- document: ... -has incorrect format*- if the document or the word in the document has incorrect format
+*- document: ... has incorrect symbols*- if the document or the word in the document has incorrect symbols
 
-*- request: ... -has incorrect format* - if the request or the word in the request has incorrect format
+*- request: ... has incorrect symbols* - if the request or the word in the request has incorrect symbols
 
-*- request: ... -is empty* - if the request doesn't have any words
+*- request: ... is empty* - if the request doesn't have any words
 
 *- request: ... -over the limit* -  if the request is out of limit (has number 1001 and more)
+
+*- requests.json is not found* - if file request.json wasn't found
 
 **Please notice that if you see this warnigs, you'll get answers without incorrect documents and requests.**
 
