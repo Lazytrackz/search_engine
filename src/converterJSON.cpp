@@ -127,7 +127,7 @@ std::vector<std::string> ConverterJSON::GetRequests() {
                 requests.push_back(i);
             }
             if (incorrectFormat) {
-                std::cerr << "request: " << i << " has incorrect format" << std::endl;
+                std::cerr << "request: " << i << " has incorrect symbols" << std::endl;
             }
             if (emptyRequest) {
                 std::cerr << "request: " << i << " is empty" << std::endl;
