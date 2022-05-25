@@ -17,7 +17,6 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string> input_docs) {
     int count = 0;
     std::vector<std::thread> indexThreads;
 
-
     for (auto i : docs) {
         indexThreads.emplace_back(std::thread([i, this, count]() {
 

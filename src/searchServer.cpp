@@ -26,24 +26,24 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             buffer >> word;
             uniqWord.emplace(word);
         }
-        for (auto i : uniqWord) {
+        for (auto i2 : uniqWord) {
             int res = 0;
 
-            for (auto j : _index.GetWordCount(i)) {
+            for (auto j : _index.GetWordCount(i2)) {
                 res += j.count;
             }
             if (res > 0) {
-                wordsSort.insert(std::pair<int, std::string>(res, i));
+                wordsSort.insert(std::pair<int, std::string>(res, i2));
                 found = true;
             }
         }
         if (found) {
             for (auto it = wordsSort.begin(); it != wordsSort.end(); it++) {
-                for (auto i : _index.GetWordCount(it->second)) {
-                    if (auto it = wordFrequency.find(i.doc_id); it != wordFrequency.end()) {
-                        it->second += i.count;
+                for (auto i2 : _index.GetWordCount(it->second)) {
+                    if (auto it2 = wordFrequency.find(i2.doc_id); it2 != wordFrequency.end()) {
+                        it2->second += i2.count;
                     } else {
-                        wordFrequency[i.doc_id] = i.count;
+                        wordFrequency[i2.doc_id] = i2.count;
                     }
                 }
             }
@@ -58,7 +58,7 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
                 relativeVec.push_back(relative);
             }
 
-            std::sort(relativeVec.begin(), relativeVec.end(), [](RelativeIndex &r1, RelativeIndex &r2) {
+            std::sort(relativeVec.begin(), relativeVec.end(), [](const auto &r1, const auto &r2) {
                 return r1.rank > r2.rank;
             });
         }
@@ -70,6 +70,17 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
     }
     return search;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

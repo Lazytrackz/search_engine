@@ -21,12 +21,12 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
     for (auto i : docLinks) {
         std::ifstream links(i);
         std::string text;
-        bool incorrectFormat = false;
-        int countWords = 0;
 
         if (!links.is_open()) {
             std::cerr << "file: " << i << " didn't open" << std::endl;
         } else {
+            bool incorrectFormat = false;
+            int countWords = 0;
             std::getline(links, text);
             std::stringstream textBuffer;
             textBuffer << text;
@@ -43,8 +43,8 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
                     incorrectFormat = true;
                     break;
                 } else {
-                    for (auto i : word) {
-                        if (i < 'a' || i > 'z') {
+                    for (auto i2 : word) {
+                        if (i2 < 'a' || i2 > 'z') {
                             incorrectFormat = true;
                             break;
                         }
@@ -114,8 +114,8 @@ std::vector<std::string> ConverterJSON::GetRequests() {
                         incorrectFormat = true;
                         break;
                     } else {
-                        for (auto i : word) {
-                            if (i < 'a' || i > 'z') {
+                        for (auto i2 : word) {
+                            if (i2 < 'a' || i2 > 'z') {
                                 incorrectFormat = true;
                                 break;
                             }
@@ -151,7 +151,6 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> &
     for (auto i : answers) {
         nlohmann::json resultDict;
         nlohmann::json relevanceDict;
-        int respCount = 0;
         auto number = std::to_string((float) count / 1000);
         auto requestNumber = "request" + number.substr(2, 3);
 
@@ -162,6 +161,7 @@ void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> &
                 resultDict["docid"] = it->first;
                 resultDict["rank"] = it->second;
             } else if (i.size() > 1) {
+                int respCount = 0;
                 for (auto j : i) {
                     if (respCount >= GetResponsesLimit()) {
                         break;
