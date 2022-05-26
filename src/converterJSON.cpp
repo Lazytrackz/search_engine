@@ -43,8 +43,8 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
                     incorrectFormat = true;
                     break;
                 } else {
-                    for (auto i2 : word) {
-                        if (i2 < 'a' || i2 > 'z') {
+                    for (auto j : word) {
+                        if (j < 'a' || j > 'z') {
                             incorrectFormat = true;
                             break;
                         }
@@ -114,8 +114,8 @@ std::vector<std::string> ConverterJSON::GetRequests() {
                         incorrectFormat = true;
                         break;
                     } else {
-                        for (auto i2 : word) {
-                            if (i2 < 'a' || i2 > 'z') {
+                        for (auto j : word) {
+                            if (j < 'a' || j > 'z') {
                                 incorrectFormat = true;
                                 break;
                             }

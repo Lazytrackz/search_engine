@@ -26,24 +26,24 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             buffer >> word;
             uniqWord.emplace(word);
         }
-        for (auto i2 : uniqWord) {
+        for (auto j : uniqWord) {
             int res = 0;
 
-            for (auto j : _index.GetWordCount(i2)) {
-                res += j.count;
+            for (auto k : _index.GetWordCount(j)) {
+                res += k.count;
             }
             if (res > 0) {
-                wordsSort.insert(std::pair<int, std::string>(res, i2));
+                wordsSort.insert(std::pair<int, std::string>(res, j));
                 found = true;
             }
         }
         if (found) {
             for (auto it = wordsSort.begin(); it != wordsSort.end(); it++) {
-                for (auto i2 : _index.GetWordCount(it->second)) {
-                    if (auto it2 = wordFrequency.find(i2.doc_id); it2 != wordFrequency.end()) {
-                        it2->second += i2.count;
+                for (auto j : _index.GetWordCount(it->second)) {
+                    if (auto it2 = wordFrequency.find(j.doc_id); it2 != wordFrequency.end()) {
+                        it2->second += j.count;
                     } else {
-                        wordFrequency[i2.doc_id] = i2.count;
+                        wordFrequency[j.doc_id] = j.count;
                     }
                 }
             }
