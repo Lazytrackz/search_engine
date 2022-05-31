@@ -230,7 +230,7 @@ public:
 
 The app's version is configured in CMakeList.txt:
 ```CMake
-project(SearchEngine VERSION 1.0)
+project(Search_engine VERSION 1.0)
 ```
 
 The app will not launch if one of the points above is true.
