@@ -19,12 +19,12 @@ Search-engine is based on three classes:
 
 1. Gets documents from JSON file
 2. Gets search requests from JSON file
-3. Provides relevant answers to JSON file
+3. Records relevant answers into JSON file
 
 
 ```C++
 
-std::vector<std::string> GetTextDocuments();//converts documents to string
+std::vector<std::string> GetTextDocuments();//this method converts documents to string
 std::vector<std::string> GetRequests();//converts requests to string
 void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//converts answers from string to JSON
 ```
@@ -45,18 +45,18 @@ std::vector<Entry> GetWordCount(const std::string& word);//counts how many times
 
 1. Gets search requests
 2. Splits requests for simply words
-3. Searchs words in documents
+3. Searches for words in documents
 4. Prepares a list of relevant documents 
 
 ```C++
 SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to count a frequency for each word from request
-std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and return rlevant answers
+std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and returns relevant answers
 ```
 
 ## Setup&launch
 
 
-To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is allready included to the project as git-submodule.
+To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is already included to the project as git-submodule.
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json to the project directory.
