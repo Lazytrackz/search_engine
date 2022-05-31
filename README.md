@@ -239,7 +239,7 @@ You also get warnings, but the application will continue to work:
 
 
 
-*- "document: ... has incorrect symbols"* - if the app can't open a document
+*- file: ... didn't open* - if the app can't open a document
 
 *- document: ... has incorrect symbols*- if the document or the word in the document has incorrect symbols
 
@@ -247,7 +247,7 @@ You also get warnings, but the application will continue to work:
 
 *- request: ... is empty* - if the request doesn't have any words
 
-*- request: ... -over the limit* -  if the request is out of limit (has number 1001 and more)
+*- request: ... over the limit* -  if the field "request" in request.json has more than 1000 requests
 
 *- requests.json is not found* - if file request.json wasn't found
 
