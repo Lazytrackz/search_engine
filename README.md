@@ -6,8 +6,6 @@
 
 
 
-
-
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
 
@@ -80,14 +78,10 @@ cd Build_directory
 
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
-3. Each document sould be no more then 1000 words, one word no more then 100 signts
+3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
-5. You need use latin script only
+5. You need use Latin script only
 
-
-*You can find unit tests in /src/test.cpp.
-To launch unit tests please use CMakeLists_tests.txt in Test documents folder, put it into the project folder.
-You can also use documents in directory "Test documents" for simply test after bulding the app.*
 
 config.json examle:
 
@@ -104,12 +98,10 @@ config.json examle:
 }
 ```
 
-Wnen config file was setup, you need to add "requests" into requests.json.
-
 1. It could be simply words or sentences
-2. It should be no more then 1000 requests, one request  - no more 10 words
+2. It should be no more than 1000 requests, one request - no more 10 words
 3. All words are separated by spaces and should have lower register letters
-5. You also need use latin script only
+5. You also need use Latin script only
 
 requests.json examle:
 
@@ -126,8 +118,9 @@ requests.json examle:
 
 
 
-In the the result you'll get answers.json file with relevant answers for each request.
+In the result you will get answers.json file with relevant answers for each request.
 For example:
+
 
 ```JSON
 {
@@ -180,8 +173,11 @@ For example:
 ```
 
 -For the first request was found 3 documents. The most relevant - the document with ID2
+
 -For the second request was found only one document
+
 -For the third request was found 3 documents
+
 -For the fourth request no one document wasn't found
 
 
@@ -227,8 +223,8 @@ The app's version is configured in CMakeList.txt:
 project(SearchEngine VERSION 1.0)
 ```
 
-The app will not launch if one of the point above is true.
-You'll get message about this issues in console.
+The app will not launch if one of the points above is true.
+You will get message about these issues in console.
 
 You also get warnings, but the application will continue to work:
 
@@ -246,7 +242,7 @@ You also get warnings, but the application will continue to work:
 
 *- requests.json is not found* - if file request.json wasn't found
 
-**Please notice that if you see this warnigs, you'll get the result in answers.json without incorrect documents and requests.**
+**Please notice that if you see this warnings, you'll get the result in answers.json without incorrect documents and requests.**
 
 
 
