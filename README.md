@@ -59,18 +59,27 @@ This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json into the project directory.
 
-To launch the app after building use command depends on your OS:
+To build the executable:
 
 ```
-cd Build_directory
+mkdir build
+cd build
+cmake ../
+cmake --build ./ --target search_engine
+```
+To launch:
+```
 ./Search_engine
 ```
 
-```
-cd Build_directory
->Search_engine.exe
-```
+You can also duild and launch unit test:
 
+mkdir test
+cd test
+cmake ../
+cmake --build ./ --target unit_tests
+./unit_tests
+```
 
 
 
