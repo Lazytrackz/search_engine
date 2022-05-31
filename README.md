@@ -65,21 +65,20 @@ To build the executable:
 mkdir build
 cd build
 cmake ../
-cmake --build ./ --target search_engine
+cmake --build ./ --target Search_engine
 ```
 To launch:
 ```
+cd src
 ./Search_engine
 ```
 
-You can also build and launch unit test:
+You can also build and launch unit tests:
 
 ```
-mkdir test
-cd test
-cmake ../
-cmake --build ./ --target unit_tests
-./unit_tests
+cmake --build ./ --target Unit_tests
+cd tests
+./Unit_tests
 ```
 
 
