@@ -24,7 +24,7 @@ This application is based on three classes:
 
 ```C++
 
-std::vector<std::string> GetTextDocuments();//this method converts documents to string
+std::vector<std::string> GetTextDocuments();//converts documents to string
 std::vector<std::string> GetRequests();//converts requests to string
 void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//converts answers from string to JSON
 ```
