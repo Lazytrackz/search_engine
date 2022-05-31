@@ -72,8 +72,9 @@ To launch:
 ./Search_engine
 ```
 
-You can also duild and launch unit test:
+You can also build and launch unit test:
 
+```
 mkdir test
 cd test
 cmake ../
