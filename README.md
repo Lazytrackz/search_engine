@@ -232,7 +232,7 @@ The app's version is configured in CMakeList.txt:
 project(SearchEngine VERSION 1.0)
 ```
 
-The app will not launch if one of this points are true.
+The app will not launch if one of the point above is true.
 You'll get message about this issues in console.
 
 You also get warnings, but the application will continue to work:
