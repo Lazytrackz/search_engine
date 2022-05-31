@@ -59,7 +59,7 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is already included into the project as git-submodule.
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
-You also need to put config.json, requests.json and answers.json to the project directory.
+You also need to put config.json, requests.json and answers.json into the project directory.
 
 To launch the app after building use command depends on your OS:
 
@@ -251,7 +251,7 @@ You also get warnings, but the application will continue to work:
 
 *- requests.json is not found* - if file request.json wasn't found
 
-**Please notice that if you see this warnigs, you'll get the result in "answers.json" without incorrect documents and requests.**
+**Please notice that if you see this warnigs, you'll get the result in answers.json without incorrect documents and requests.**
 
 
 
