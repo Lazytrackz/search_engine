@@ -179,15 +179,10 @@ For example:
 
 ```
 
--For the firts request was found 3 documents. The most relevat - the document with ID2
-
+-For the first request was found 3 documents. The most relevant - the document with ID2
 -For the second request was found only one document
-
 -For the third request was found 3 documents
-
 -For the fourth request no one document wasn't found
-
-
 
 
 **When you get !CRASH!**
