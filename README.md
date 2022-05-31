@@ -13,7 +13,7 @@ It provides fast search and easy to setup via JSON files.
 
 ## Description
 
-Search-engine is based on three classes:
+This application is based on three classes:
 
 #### Converter JSON
 
