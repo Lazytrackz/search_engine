@@ -6,20 +6,18 @@
 
 
 
-
-
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
 
 ## Description
 
-Search-engine is based on three classes:
+This application is based on three classes:
 
 #### Converter JSON
 
 1. Gets documents from JSON file
 2. Gets search requests from JSON file
-3. Provides relevant answers to JSON file
+3. Records relevant answers into JSON file
 
 
 ```C++
@@ -45,34 +43,44 @@ std::vector<Entry> GetWordCount(const std::string& word);//counts how many times
 
 1. Gets search requests
 2. Splits requests for simply words
-3. Searchs words in documents
+3. Searches for words in documents
 4. Prepares a list of relevant documents 
 
 ```C++
 SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to count a frequency for each word from request
-std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and return rlevant answers
+std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and returns relevant answers
 ```
 
 ## Setup&launch
 
 
-To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is allready included to the project as git-submodule.
+To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is already included into the project as git-submodule.
 This app uses CMake VERSION 3.19.
 The app doesn't launch without JSON config file: config.json.
-You also need to put config.json, requests.json and answers.json to the project directory.
+You also need to put config.json, requests.json and answers.json into the project directory.
 
-To launch the app after building use command depends on your OS:
+To build the executable:
 
 ```
-cd Build_directory
+mkdir build
+cd build
+cmake ../
+cmake --build ./ --target search_engine
+```
+To launch:
+```
 ./Search_engine
 ```
 
-```
-cd Build_directory
->Search_engine.exe
-```
+You can also build and launch unit test:
 
+```
+mkdir test
+cd test
+cmake ../
+cmake --build ./ --target unit_tests
+./unit_tests
+```
 
 
 
@@ -80,14 +88,10 @@ cd Build_directory
 
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
-3. Each document sould be no more then 1000 words, one word no more then 100 signts
+3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
-5. You need use latin script only
+5. You need use Latin script only
 
-
-*You can find unit tests in /src/test.cpp.
-To launch unit tests please use CMakeLists_tests.txt in Test documents folder, put it into the project folder.
-You can also use documents in directory "Test documents" for simply test after bulding the app.*
 
 config.json examle:
 
@@ -104,12 +108,10 @@ config.json examle:
 }
 ```
 
-Wnen config file was setup, you need to add "requests" into requests.json.
-
 1. It could be simply words or sentences
-2. It should be no more then 1000 requests, one request  - no more 10 words
+2. It should be no more than 1000 requests, one request - no more 10 words
 3. All words are separated by spaces and should have lower register letters
-5. You also need use latin script only
+5. You also need use Latin script only
 
 requests.json examle:
 
@@ -126,8 +128,9 @@ requests.json examle:
 
 
 
-In the the result you'll get answers.json file with relevant answers for each request.
+In the result you will get answers.json file with relevant answers for each request.
 For example:
+
 
 ```JSON
 {
@@ -179,15 +182,13 @@ For example:
 
 ```
 
--For the firts request was found 3 documents. The most relevat - the document with ID2
+-For the first request was found 3 documents. The most relevant - the document with ID2
 
 -For the second request was found only one document
 
 -For the third request was found 3 documents
 
 -For the fourth request no one document wasn't found
-
-
 
 
 **When you get !CRASH!**
@@ -229,17 +230,17 @@ public:
 
 The app's version is configured in CMakeList.txt:
 ```CMake
-project(SearchEngine VERSION 1.0)
+project(Search_engine VERSION 1.0)
 ```
 
-The app will not launch if one of this points are true.
-You'll get message about this issues in console.
+The app will not launch if one of the points above is true.
+You will get message about these issues in console.
 
 You also get warnings, but the application will continue to work:
 
 
 
-*- "document: ... has incorrect symbols"* - if the app can't open a document
+*- file: ... didn't open* - if the app can't open a document
 
 *- document: ... has incorrect symbols*- if the document or the word in the document has incorrect symbols
 
@@ -247,11 +248,11 @@ You also get warnings, but the application will continue to work:
 
 *- request: ... is empty* - if the request doesn't have any words
 
-*- request: ... -over the limit* -  if the request is out of limit (has number 1001 and more)
+*- request: ... limit is exceeded* -  if the field "request" in request.json has more than 1000 requests
 
 *- requests.json is not found* - if file request.json wasn't found
 
-**Please notice that if you see this warnigs, you'll get answers without incorrect documents and requests.**
+**Please notice that if you see this warnings, you'll get the result in answers.json without incorrect documents and requests.**
 
 
 
