@@ -247,7 +247,7 @@ You also get warnings, but the application will continue to work:
 
 *- request: ... is empty* - if the request doesn't have any words
 
-*- request: ... over the limit* -  if the field "request" in request.json has more than 1000 requests
+*- request: ... limit is exceeded* -  if the field "request" in request.json has more than 1000 requests
 
 *- requests.json is not found* - if file request.json wasn't found
 
