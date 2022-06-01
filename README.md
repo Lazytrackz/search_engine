@@ -33,7 +33,7 @@ void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//conver
 4. Counts words frequency
 
 ```C++
-void UpdateDocumentBase(std::vector<std::string>input_docs);//gets documents and splits it for simply words
+void UpdateDocumentBase(std::vector<std::string>input_docs);//gets documents and splits for simply words
 std::vector<Entry> GetWordCount(const std::string& word);//counts how many times a word appears in documents
 ```
 
