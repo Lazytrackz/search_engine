@@ -84,6 +84,8 @@ cd tests
 **How to configure search requests:**
 ![Search](https://user-images.githubusercontent.com/105053265/171429084-bfd49fed-0672-4a9f-9ae5-36bcc3a0f4d0.png)
 
+**Config:**
+
 1. First of all you need to add links to documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
 3. Each document should be no more than 1000 words, one word no more than 100 signs
@@ -105,6 +107,7 @@ config.json examle:
 
 }
 ```
+**Requests:**
 
 1. It could be simply words or sentences
 2. It should be no more than 1000 requests, one request - no more 10 words
@@ -123,8 +126,7 @@ requests.json examle:
 
 ```
 
-
-
+**Answers:**
 
 In the result you will get answers.json file with relevant answers for each request.
 For example:
