@@ -51,14 +51,13 @@ SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to cou
 std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and returns relevant answers
 ```
 
-## Setup&launch
+## Setup&search
 
 
 To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is already included into the project as git-submodule.
 This app uses CMake VERSION 3.19.
-The app doesn't launch without JSON config file: config.json.
-You also need to put config.json, requests.json and answers.json into the project build directory.
-For example: build/src
+It doesn't launch without JSON config file: config.json.
+You also need to put config.json, requests.json and answers.json into the project "build" directory.
 
 **To build the executable:**
 
@@ -84,13 +83,13 @@ cd tests
 
 
 
-**How does it work:**
+**How to configure search requests:**
 
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
 3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
-5. You need use Latin script only
+5. Use Latin script only
 
 
 config.json examle:
