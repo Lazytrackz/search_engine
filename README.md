@@ -226,7 +226,7 @@ public:
 
 1. If config.json doesn't have a field "config"
 2. If the app can't find file config.json
-3. If config.json has a version, different from the app's version (see the field "project")
+3. If config.json has a version, different from the app's version 
 
 The app's version is configured in CMakeList.txt:
 ```CMake
