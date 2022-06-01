@@ -180,7 +180,7 @@ For example:
 
 ```
 
--For the first request was found 3 documents. The most relevant - the document with ID2
+-For the first request was found 3 documents. The most relevant document has "docid": 2
 
 -For the second request was found only one document
 
