@@ -88,7 +88,7 @@ cd tests
 2. You may also setup how many responses you want to get, field: "max_responses" 
 3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
-5. Use Latin script only
+5. Nessesary to use Latin script only
 
 
 config.json examle:
@@ -109,7 +109,7 @@ config.json examle:
 1. It could be simply words or sentences
 2. It should be no more than 1000 requests, one request - no more 10 words
 3. All words are separated by spaces and should have lower register letters
-5. You also need use Latin script only
+5. Nessesary to use Latin script only
 
 requests.json examle:
 
