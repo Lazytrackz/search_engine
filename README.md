@@ -6,11 +6,9 @@
 
 
 
+## Description
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
-
-## Description
-
 This application is based on three classes:
 
 #### Converter JSON
