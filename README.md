@@ -234,7 +234,7 @@ project(Search_engine VERSION 1.0)
 ```
 
 The app will not launch if one of the points above is true.
-You will get message about these issues in console.
+You will get a message about these issues in console.
 
 You also get warnings, but the application will continue to work:
 
