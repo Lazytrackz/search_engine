@@ -84,6 +84,7 @@ cd tests
 
 
 **How to configure search requests:**
+![Search](https://user-images.githubusercontent.com/105053265/171429084-bfd49fed-0672-4a9f-9ae5-36bcc3a0f4d0.png)
 
 1. First of all you need to add links for documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
