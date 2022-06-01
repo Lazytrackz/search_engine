@@ -6,11 +6,9 @@
 
 
 
+## Description
 This is a console local-file search engine. 
 It provides fast search and easy to setup via JSON files.
-
-## Description
-
 This application is based on three classes:
 
 #### Converter JSON
@@ -31,11 +29,11 @@ void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//conver
 
 1. Updates document's database
 2. Splits documents for simply words
-3. Prepares frequency dictionary
+3. Prepares a frequency dictionary
 4. Counts words frequency
 
 ```C++
-void UpdateDocumentBase(std::vector<std::string>input_docs);//gets documents and splits it for simply words
+void UpdateDocumentBase(std::vector<std::string>input_docs);//gets documents and splits for simply words
 std::vector<Entry> GetWordCount(const std::string& word);//counts how many times a word appears in documents
 ```
 
@@ -51,46 +49,48 @@ SearchServer(InvertedIndex& idx) : _index(idx){ };//uses this constructor to cou
 std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input);//sorts and returns relevant answers
 ```
 
-## Setup&launch
+## Setup&search
 
 
 To build the app you need to use third party JSON library https://github.com/nlohmann/json/releases, this library is already included into the project as git-submodule.
 This app uses CMake VERSION 3.19.
-The app doesn't launch without JSON config file: config.json.
-You also need to put config.json, requests.json and answers.json into the project directory.
+It doesn't launch without JSON config file: config.json.
+You also need to put config.json, requests.json and answers.json into the project "build" directory.
 
-To build the executable:
+**To build the executable:**
 
 ```
 mkdir build
 cd build
 cmake ../
-cmake --build ./ --target search_engine
+cmake --build ./ --target Search_engine
 ```
-To launch:
+**To launch:**
 ```
+cd src
 ./Search_engine
 ```
 
-You can also build and launch unit test:
+**You can also build and launch unit tests:**
 
 ```
-mkdir test
-cd test
-cmake ../
-cmake --build ./ --target unit_tests
-./unit_tests
+cmake --build ./ --target Unit_tests
+cd tests
+./Unit_tests
 ```
 
 
 
-**How does it work:**
+**How to configure search requests:**
+![Search](https://user-images.githubusercontent.com/105053265/171429084-bfd49fed-0672-4a9f-9ae5-36bcc3a0f4d0.png)
 
-1. First of all you need to add links for documents to search into config.json, field "files"
+**Config:**
+
+1. First of all you need to add links to documents to search into config.json, field "files"
 2. You may also setup how many responses you want to get, field: "max_responses" 
 3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
-5. You need use Latin script only
+5. Nessesary to use Latin script only
 
 
 config.json examle:
@@ -107,11 +107,12 @@ config.json examle:
 
 }
 ```
+**Requests:**
 
 1. It could be simply words or sentences
 2. It should be no more than 1000 requests, one request - no more 10 words
 3. All words are separated by spaces and should have lower register letters
-5. You also need use Latin script only
+5. Nessesary to use Latin script only
 
 requests.json examle:
 
@@ -125,8 +126,7 @@ requests.json examle:
 
 ```
 
-
-
+**Answers:**
 
 In the result you will get answers.json file with relevant answers for each request.
 For example:
@@ -182,7 +182,7 @@ For example:
 
 ```
 
--For the first request was found 3 documents. The most relevant - the document with ID2
+-For the first request was found 3 documents. The most relevant document has "docid": 2
 
 -For the second request was found only one document
 
@@ -191,7 +191,7 @@ For example:
 -For the fourth request no one document wasn't found
 
 
-**When you get !CRASH!**
+## When you get !CRASH!
 
 In main.cpp you can find some exceptions for different situations:
 
@@ -226,7 +226,7 @@ public:
 
 1. If config.json doesn't have a field "config"
 2. If the app can't find file config.json
-3. If config.json has a version different from the app's version (see the field "project")
+3. If config.json has a version, different from the app's version 
 
 The app's version is configured in CMakeList.txt:
 ```CMake
@@ -234,13 +234,13 @@ project(Search_engine VERSION 1.0)
 ```
 
 The app will not launch if one of the points above is true.
-You will get message about these issues in console.
+You will get a message about these issues in console.
 
 You also get warnings, but the application will continue to work:
 
 
 
-*- file: ... didn't open* - if the app can't open a document
+*- file: ... didn't open* - if the app can't open the document
 
 *- document: ... has incorrect symbols*- if the document or the word in the document has incorrect symbols
 
@@ -250,9 +250,9 @@ You also get warnings, but the application will continue to work:
 
 *- request: ... limit is exceeded* -  if the field "request" in request.json has more than 1000 requests
 
-*- requests.json is not found* - if file request.json wasn't found
+*- requests.json is not found* - if request.json wasn't found
 
-**Please notice that if you see this warnings, you'll get the result in answers.json without incorrect documents and requests.**
+**Please notice that if you see this warnings, you will get the result in answers.json without incorrect documents and requests.**
 
 
 
