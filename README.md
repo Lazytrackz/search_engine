@@ -60,7 +60,7 @@ The app doesn't launch without JSON config file: config.json.
 You also need to put config.json, requests.json and answers.json into the project build directory.
 For example: build/src
 
-To build the executable:
+**To build the executable:**
 
 ```
 mkdir build
@@ -68,13 +68,13 @@ cd build
 cmake ../
 cmake --build ./ --target Search_engine
 ```
-To launch:
+**To launch:**
 ```
 cd src
 ./Search_engine
 ```
 
-You can also build and launch unit tests:
+**You can also build and launch unit tests:**
 
 ```
 cmake --build ./ --target Unit_tests
