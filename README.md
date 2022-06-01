@@ -240,7 +240,7 @@ You also get warnings, but the application will continue to work:
 
 
 
-*- file: ... didn't open* - if the app can't open a document
+*- file: ... didn't open* - if the app can't open the document
 
 *- document: ... has incorrect symbols*- if the document or the word in the document has incorrect symbols
 
