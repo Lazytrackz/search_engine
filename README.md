@@ -29,7 +29,7 @@ void putAnswers(std::vector<std::vector<std::pair<int,float>>>&answers);//conver
 
 1. Updates document's database
 2. Splits documents for simply words
-3. Prepares frequency dictionary
+3. Prepares a frequency dictionary
 4. Counts words frequency
 
 ```C++
