@@ -250,7 +250,7 @@ You also get warnings, but the application will continue to work:
 
 *- request: ... limit is exceeded* -  if the field "request" in request.json has more than 1000 requests
 
-*- requests.json is not found* - if file request.json wasn't found
+*- requests.json is not found* - if the file request.json wasn't found
 
 **Please notice that if you see this warnings, you'll get the result in answers.json without incorrect documents and requests.**
 
