@@ -252,7 +252,7 @@ You also get warnings, but the application will continue to work:
 
 *- requests.json is not found* - if request.json wasn't found
 
-**Please notice that if you see this warnings, you'll get the result in answers.json without incorrect documents and requests.**
+**Please notice that if you see this warnings, you will get the result in answers.json without incorrect documents and requests.**
 
 
 
