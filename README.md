@@ -87,7 +87,7 @@ cd tests
 **Config:**
 
 1. First of all you need to add links to documents to search into config.json, field "files"
-2. You may also setup how many responses you want to get, field: "max_responses" 
+2. You can also specify how many responses you want to get, field: "max_responses" 
 3. Each document should be no more than 1000 words, one word no more than 100 signs
 4. All words are separated by spaces and should have lower register letters
 5. Nessesary to use Latin script only
