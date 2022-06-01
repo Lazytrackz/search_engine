@@ -128,7 +128,7 @@ requests.json examle:
 
 **Answers:**
 
-In the result you will get answers.json file with relevant answers for each request.
+In the result you will get answers.json with relevant answers for each request.
 For example:
 
 
