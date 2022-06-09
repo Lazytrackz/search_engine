@@ -93,7 +93,7 @@ cd tests
 5. Nessesary to use Latin script only
 
 
-config.json examle:
+config.json example:
 
 ```JSON
 {
@@ -114,7 +114,7 @@ config.json examle:
 3. All words are separated by spaces and should have lower register letters
 5. Nessesary to use Latin script only
 
-requests.json examle:
+requests.json example:
 
 ```JSON
 {
